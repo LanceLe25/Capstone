@@ -50,9 +50,9 @@ function displayYoutubeData(data) {
 }
 
 
-
+//call urban dictionary api
 function callUrbanDictionary(searchWord) {
-	const url  = `http://api.urbandictionary.com/v0/define?term=${searchWord}`;
+	const url  = `https://api.urbandictionary.com/v0/define?term=${searchWord}`;
 $.getJSON(url, function(data) {
 	console.log(data.list);
 	displayUrbanDictionaryData(data);
@@ -60,7 +60,7 @@ $.getJSON(url, function(data) {
 });
 }
 
-//display fav Q results
+//display urban dictionary results
 function displayUrbanDictionaryData(results) {
 	$('.urbanDictionary').html(`
 		<h1>${results.list[0].word}</h1>
@@ -83,6 +83,7 @@ function callGiphy(searchWord) {
 	});
 }
 
+//display giphy results
 function displayGiphy(results) {
 	let buildOutput = '';
 
