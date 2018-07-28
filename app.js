@@ -8,7 +8,20 @@ function handleSubmit() {
    const searchWordTarget = $(event.currentTarget).find('#searchfield');
    const searchWord = searchWordTarget.val();
    searchWordTarget.val("");
-   callYoutube(searchWord, displayYoutubeData);
+   console.log(searchWord);
+     if (searchWord == '') {
+  	$('.youtube').html(`
+  		<div class = 'error_youtube'>
+  		<h1>Whoops!</h1>
+  		<p>Please add a search keyword</p>
+  		</div>
+  		`);
+  }
+  else{
+  	callYoutube(searchWord, displayYoutubeData);
+  	callUrbanDictionary(searchWord);
+  	callGiphy(searchWord);
+  }
   });
 }
 
@@ -24,8 +37,7 @@ const params = {
     order: 'relevance',
   };
   const url = 'https://www.googleapis.com/youtube/v3/search';
-  $.getJSON(url, params, callBack)
-  callUrbanDictionary(searchWord);
+  $.getJSON(url, params, callBack);
 }
 
 // display youtube results
@@ -46,6 +58,7 @@ function displayYoutubeData(data) {
   console.log('3');
   let results = data.items.map((item, index) => 
   displayYoutube(item));
+  console.log(data);
   $('.youtube').html(results);
 }
 
@@ -56,17 +69,27 @@ function callUrbanDictionary(searchWord) {
 $.getJSON(url, function(data) {
 	console.log(data.list);
 	displayUrbanDictionaryData(data);
-	callGiphy(searchWord);
 });
 }
 
 //display urban dictionary results
 function displayUrbanDictionaryData(results) {
+	let urbanWord = results.list[0];
+	if(urbanWord == null) {
+		$('.urbanDictionary').html(`
+			<div class = 'error_urban_dictionary'>
+  		<h1>Whoops!</h1>
+  		<p>No definition found</p>
+  		</div>
+			`);
+	}
+	else {
 	$('.urbanDictionary').html(`
-		<h1>${results.list[0].word}</h1>
-		<p>${results.list[0].definition}</p>
-		<p>${results.list[0].example}</p>
+		<h1>${urbanWord.word}</h1>
+		<p>${urbanWord.definition}</p>
+		<p>${urbanWord.example}</p>
 		`);
+	}
 }
 
 //call giphy api
@@ -85,13 +108,23 @@ function callGiphy(searchWord) {
 
 //display giphy results
 function displayGiphy(results) {
+	if(results == undefined) {
+		$('.giphy').html(`
+			<div class = 'error_giphy'>
+  		<h1>Whoops!</h1>
+  		<p>No gifs found</p>
+  		</div>
+			`);
+	}
+	else {
 	let buildOutput = '';
 
 	$.each(results, function(key, value) {
-		buildOutput += '<div>';
+		buildOutput += '<div class = "gif">';
 		buildOutput += '<img src = ' + value.images.downsized_medium.url + '>';
 		buildOutput += '<div>'
 	});
 	$('.giphy').html(buildOutput);
+	}
 }
 $(handleSubmit);
