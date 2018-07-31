@@ -32,7 +32,7 @@ const params = {
     part:'snippet',
     key:'AIzaSyAZLWhzTxFLcoVfQ39tIOjzGoTnbyBTt_k',
     q: searchWord,
-    maxResults: 5,
+    maxResults: 3,
     type: 'video',
     order: 'relevance',
   };
@@ -44,11 +44,11 @@ const params = {
 function displayYoutube(searchWord) {
   console.log('4');
 return `
-  <div>
+  <div class="youtube_frame">
 	  <h2>
-		<a class="js-result-name" href="https://www.youtube.com/watch?v=${searchWord.id.videoId}" target="_blank">${searchWord.snippet.title}</a> 
+		<a class="youtube_name" href="https://www.youtube.com/watch?v=${searchWord.id.videoId}" target="_blank">${searchWord.snippet.title}</a> 
 		</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${searchWord.id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/${searchWord.id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen alt="youtube video for search word"></iframe>'
 	</div>
   `;
 }
@@ -86,8 +86,8 @@ function displayUrbanDictionaryData(results) {
 	else {
 	$('.urbanDictionary').html(`
 		<h1>${urbanWord.word}</h1>
-		<p>${urbanWord.definition}</p>
-		<p>${urbanWord.example}</p>
+		<p>Definition: ${urbanWord.definition}</p>
+		<p>Example: ${urbanWord.example}</p>
 		`);
 	}
 }
@@ -97,18 +97,18 @@ function callGiphy(searchWord) {
 	const url = 'https://api.giphy.com/v1/gifs/search';
 	let settings = {
 		q: searchWord,
-		limit: 5,
+		limit: 3,
 		api_key: 'Jbn01K3ZtgB3K2sdBvlzAkqAAFfPWtO6',
 	};
 	$.getJSON(url, settings, function(data) {
-		console.log(data.data);
+		console.log(data);
 	displayGiphy(data.data);
 	});
 }
 
 //display giphy results
 function displayGiphy(results) {
-	if(results == undefined) {
+	if(results == null | results == "" | results == undefined) {
 		$('.giphy').html(`
 			<div class = 'error_giphy'>
   		<h1>Whoops!</h1>
@@ -120,9 +120,8 @@ function displayGiphy(results) {
 	let buildOutput = '';
 
 	$.each(results, function(key, value) {
-		buildOutput += '<div class = "gif">';
-		buildOutput += '<img src = ' + value.images.downsized_medium.url + '>';
-		buildOutput += '<div>'
+		buildOutput += '<div class = "gif"><img src = "' + value.images.downsized_medium.url +'" alt="gif for search word"></div>';
+		console.log(results);
 	});
 	$('.giphy').html(buildOutput);
 	}

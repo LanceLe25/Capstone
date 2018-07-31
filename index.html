@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>MVP</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css" />
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -15,20 +17,20 @@
   <body>
     <header role="header">
       <h1>Slang Search</h1>
-      <h2>From groovy to gangsta, find out what kids are saying nowadays and what they mean.</h2>
+      <h2>From groovy to gucci, Learn the lingo.</h2>
     </header>
 
     <form id="input-form">
       <label for="input">
         <input id="searchfield" type="text" name="searchfield" placeholder="Lit">
       </label>
-      <button type"submit" id="button">Search</button>
+      <button type="submit" class="search_button"><i class="fas fa-search"></i></button>
     </form>
 
     <main role="main">
 
-      <div class="urbanDictionary"></div>
       <div class="giphy"></div>
+      <div class="urbanDictionary"></div>
       <div class="youtube"></div>
 
     </main>
