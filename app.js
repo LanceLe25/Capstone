@@ -10,8 +10,8 @@ function handleSubmit() {
    searchWordTarget.val("");
    console.log(searchWord);
      if (searchWord == '') {
-  	$('.youtube').html(`
-  		<div class = 'error_youtube'>
+  	$('main').html(`
+  		<div class = 'empty'>
   		<h1>Whoops!</h1>
   		<p>Please add a search keyword</p>
   		</div>
@@ -85,9 +85,11 @@ function displayUrbanDictionaryData(results) {
 	}
 	else {
 	$('.urbanDictionary').html(`
+		<div class ="urbanWordWrap">
 		<h1>${urbanWord.word}</h1>
 		<p>Definition: ${urbanWord.definition}</p>
 		<p>Example: ${urbanWord.example}</p>
+		</div>
 		`);
 	}
 }
