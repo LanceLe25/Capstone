@@ -48,7 +48,7 @@ return `
 	  <h2>
 		<a class="youtube_name" href="https://www.youtube.com/watch?v=${searchWord.id.videoId}" target="_blank">${searchWord.snippet.title}</a> 
 		</h2>
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/${searchWord.id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen alt="youtube video for search word"></iframe>'
+    <iframe role="none" width="100%" height="315" src="https://www.youtube.com/embed/${searchWord.id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen alt="youtube video for search word"></iframe>'
 	</div>
   `;
 }
