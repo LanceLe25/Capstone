@@ -1,6 +1,6 @@
 # Slang search
 
-link: https://lancele25.github.io/Capstone
+link: https://lancele25.github.io/Slang-Search/
 
 # Goals and Usage
 
