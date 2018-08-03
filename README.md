@@ -11,13 +11,13 @@ I created an app where you would search for a specific slang word you didn't kno
 Home Page:
 ![image1](https://github.com/LanceLe25/Capstone/blob/master//homePage.png)
 
-Giphy:
+Youtube:
 ![image2](https://github.com/LanceLe25/Capstone/blob/master//giphy.png)
 
 Urban Dictionary
 ![image3](https://github.com/LanceLe25/Capstone/blob/master//urbanDictionary.png)
 
-Youtube:
+Giphy:
 ![image4](https://github.com/LanceLe25/Capstone/blob/master//youtube.png)
 
 # Built with:
