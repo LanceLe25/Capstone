@@ -21,8 +21,5 @@ Youtube:
 ![image4](https://github.com/LanceLe25/Capstone/blob/master//screenshotYoutube.png)
 
 # Built with:
-HTML
-CSS
-JAVASCRIPT
-JQUERY
+HTML, CSS, JAVASCRIPT, JQUERY
 
