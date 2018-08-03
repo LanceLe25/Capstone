@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>MVP</title>
+    <title>Slang Search</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
@@ -15,19 +15,19 @@
     <script src="app.js"></script>
   </head>
   <body>
-    <header role="header">
+    <header role="banner">
       <h1>Slang Search</h1>
       <h2>From groovy to gucci, Learn the lingo.</h2>
     </header>
 
-    <form id="input-form">
-      <label for="input">
-        <input id="searchfield" type="text" name="searchfield" placeholder="Lit">
+    <form id="input-form" role="form">
+      <label for="input" id="searchfield">
+        <input type="text" name="searchfield" placeholder="Lit" aria-label="Search for keyword">
       </label>
-      <button type="submit" class="search_button"><i class="fas fa-search"></i></button>
+      <button type="submit" class="search_button" aria-label="hidden"><i class="fas fa-search"></i></button>
     </form>
 
-    <main role="main">
+    <main role="main" aria-live="polite" hidden>
 
       	<div class="giphy"></div>
       	<div class="urbanDictionary"></div>
