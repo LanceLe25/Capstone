@@ -11,14 +11,14 @@ I created an app where you would search for a specific slang word you didn't kno
 Home Page:
 ![image1](https://github.com/LanceLe25/Capstone/blob/master//homePage.png)
 
-Youtube:
-![image2](https://github.com/LanceLe25/Capstone/blob/master//giphy.png)
+Giphy:
+![image2](https://github.com/LanceLe25/Capstone/blob/master//screenshotGiphy.png)
 
 Urban Dictionary
-![image3](https://github.com/LanceLe25/Capstone/blob/master//urbanDictionary.png)
+![image3](https://github.com/LanceLe25/Capstone/blob/master//screenshotUrbanDictionary.png)
 
-Giphy:
-![image4](https://github.com/LanceLe25/Capstone/blob/master//youtube.png)
+Youtube:
+![image4](https://github.com/LanceLe25/Capstone/blob/master//screenshotYoutube.png)
 
 # Built with:
 HTML
