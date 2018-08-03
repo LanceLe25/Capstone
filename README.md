@@ -15,7 +15,7 @@ Giphy:
 ![image2](https://github.com/LanceLe25/Capstone/blob/master//giphy.png)
 
 Urban Dictionary
-![image3](https://github.com/LanceLe25/Capstone/blob/master//urbandictionary.png)
+![image3](https://github.com/LanceLe25/Capstone/blob/master//urbanDictionary.png)
 
 Youtube:
 ![image4](https://github.com/LanceLe25/Capstone/blob/master//youtube.png)
